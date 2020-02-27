@@ -25,8 +25,7 @@ namespace ContactsApp2.ViewModels
             set
             {
                 _selectedContact = value;
-                if (_selectedContact != null)
-                    return;
+               
             }
         }
         

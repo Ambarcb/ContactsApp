@@ -14,6 +14,7 @@ namespace ContactsApp2.ViewModels
     public class ContactAgendaPageViewModel : INotifyPropertyChanged
     {
         Contact _selectedContact;
+        const string PhoneCallText = "Call";
         public ICommand AddContactCommand { get; set; }
         public ICommand DeleteElementCommand { get; set; }
         public ICommand GoToAddContactPageCommand { get; set; }
@@ -64,7 +65,7 @@ namespace ContactsApp2.ViewModels
         {
             string answer = await App.Current.MainPage.DisplayActionSheet("Choose an option", "Cancel", "  " ,$"Call {SelectedContact.FirstName} {SelectedContact.LastName}");
 
-           if (answer == "Call")
+           if (PhoneCallText == "Call")
            {
                 PlacePhoneCall(_selectedContact.PhoneNumber);              
            }
