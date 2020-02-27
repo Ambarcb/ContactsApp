@@ -21,10 +21,10 @@ namespace ContactsApp2.Views
             BindingContext = new AddNewContactPageViewModel(contact);
         }
 
-        public AddNewContactPage(ObservableCollection<Contact> contact, Contact _SelectedContact)
+        public AddNewContactPage(ObservableCollection<Contact> contact, Contact _selectedContact)
         {
             InitializeComponent();
-            BindingContext = new AddNewContactPage(contact, _SelectedContact);
+            BindingContext = new AddNewContactPage(contact, _selectedContact);
         }
     }
 }

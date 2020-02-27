@@ -13,7 +13,7 @@ namespace ContactsApp2.ViewModels
 {
     public class ContactAgendaPageViewModel : INotifyPropertyChanged
     {
-        Contact _SelectedContact;
+        Contact _selectedContact;
         public ICommand AddContactCommand { get; set; }
         public ICommand DeleteElementCommand { get; set; }
         public ICommand GoToAddContactPageCommand { get; set; }
@@ -25,13 +25,13 @@ namespace ContactsApp2.ViewModels
         {
             get
             {
-                return _SelectedContact;
+                return _selectedContact;
             }
             set
             {
-                _SelectedContact = value;
+                _selectedContact = value;
 
-                if (_SelectedContact != null)
+                if (_selectedContact != null)
                     DisplayElementSelected();
 
             }
@@ -62,11 +62,11 @@ namespace ContactsApp2.ViewModels
 
         public async void DisplayElementSelected()
         {
-            string answer = await App.Current.MainPage.DisplayActionSheet("Choose an option", "CANCEL", "", "Call " + SelectedContact.FirstName + "  " + SelectedContact.LastName);
+            string answer = await App.Current.MainPage.DisplayActionSheet("Choose an option", "Cancel", "  " ,$"Call {SelectedContact.FirstName} {SelectedContact.LastName}");
 
-           if (Answer == "Call")
+           if (answer == "Call")
            {
-                PlacePhoneCall(_SelectedContact.PhoneNumber);
+                PlacePhoneCall(_selectedContact.PhoneNumber);              
            }
 
                 
@@ -75,19 +75,19 @@ namespace ContactsApp2.ViewModels
 
         public ContactAgendaPageViewModel(ObservableCollection<Contact> contacts)
         {
-            GoToAddContactPageCommand = new Command<Contact>(async (_SelectedContact) =>
+            GoToAddContactPageCommand = new Command<Contact>(async (_selectedContact) =>
             {
                 await App.Current.MainPage.Navigation.PushModalAsync(new AddNewContactPage(Contacts));
             });
 
-            DeleteElementCommand = new Command<Contact>((_SelectedContact) =>
+            DeleteElementCommand = new Command<Contact>((_selectedContact) =>
             {
-                Contacts.Remove(_SelectedContact);
+                Contacts.Remove(_selectedContact);
             });
 
-            EditContactCommand = new Command<Contact>(async (_SelectedContact) =>
+            EditContactCommand = new Command<Contact>(async (_selectedContact) =>
             {
-                await App.Current.MainPage.Navigation.PushModalAsync(new AddNewContactPage(Contacts, _SelectedContact));
+                await App.Current.MainPage.Navigation.PushModalAsync(new AddNewContactPage(Contacts, _selectedContact));
             });
         }
 

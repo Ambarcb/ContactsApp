@@ -11,32 +11,32 @@ namespace ContactsApp2.ViewModels
 {
     public class AddNewContactPageViewModel : INotifyPropertyChanged
     {
-        Contact _NewContact;
+        Contact _selectedContact;
         public ICommand AddContactCommand { get; set; }
         public ICommand ReturnToMainCommand { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public Contact NewContact
+        public Contact SelectedContact
         {
             get
             {
-                return _NewContact;
+                return _selectedContact;
             }
             set
             {
-                _NewContact = value;
-                if (_NewContact != null)
+                _selectedContact = value;
+                if (_selectedContact != null)
                     return;
             }
         }
         
         public AddNewContactPageViewModel(ObservableCollection<Contact> contacts)
         {
-            NewContact = new Contact() { Picture = "ic_pp" };
+            SelectedContact = new Contact() { Picture = "ic_pp" };
 
             AddContactCommand = new Command(async () =>
             {
-                contacts.Add(NewContact);
+                contacts.Add(SelectedContact);
                 await App.Current.MainPage.Navigation.PopModalAsync();
             });
 
@@ -46,12 +46,11 @@ namespace ContactsApp2.ViewModels
             });
         }
 
-        public AddNewContactPageViewModel(ObservableCollection<Contact> contacts, Contact _SelectedContact)
+        public AddNewContactPageViewModel(ObservableCollection<Contact> contacts, Contact _selectedContact)
         {
-            NewContact = _SelectedContact;
+            SelectedContact = _selectedContact;
             AddContactCommand = new Command(async () =>
             {
-                contacts.Add(NewContact);
                 await App.Current.MainPage.Navigation.PopModalAsync();
             });
         }

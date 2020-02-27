@@ -8,8 +8,8 @@
              x:Class="ContactsApp2.Views.AddNewContactPage">
 
     <ContentPage.Content>
-        
-     <Grid>
+        <ScrollView>
+        <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -34,11 +34,11 @@
                    Grid.ColumnSpan="2"
              BackgroundColor ="LightBlue"/>
 
-            <ImageButton Source="ic_arrow" HorizontalOptions="StartAndExpand" BackgroundColor ="Transparent" Margin="5,0,0,0">
+            <Image Source="ic_arrow" HorizontalOptions="StartAndExpand" BackgroundColor ="Transparent" Margin="5,0,0,0">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding ReturnToMainCommand}"/>
                 </Image.GestureRecognizers>
-            </ImageButton>
+            </Image>
             <Button Text ="Save" Grid.Row="0" Grid.ColumnSpan ="2" HorizontalOptions="End" BackgroundColor="Transparent" Command="{Binding AddContactCommand}"/>
 
             <Frame Grid.Row="1"
@@ -76,7 +76,7 @@
                    Placeholder="First name"
                    Margin="50,0,50,0"
                    HorizontalOptions="FillAndExpand" 
-                   Text="{Binding NewContact.FirstName}">
+                   Text="{Binding SelectedContact.FirstName}">
                 
             </Entry>
 
@@ -86,7 +86,7 @@
                    Placeholder="Last name"
                    Margin="50,30,50,0"
                    HorizontalOptions="FillAndExpand" 
-                   Text="{Binding NewContact.LastName}">
+                   Text="{Binding SelectedContact.LastName}">
 
             </Entry>
 
@@ -97,7 +97,7 @@
                    Placeholder="Company"
                    Margin="50,30,50,0"
                    HorizontalOptions="FillAndExpand" 
-                   Text="{Binding NewContact.Company}">
+                   Text="{Binding SelectedContact.Company}">
 
             </Entry>
 
@@ -108,7 +108,7 @@
                    Placeholder="Phone"
                    Margin="50,20,50,0"
                    HorizontalOptions="FillAndExpand" 
-                   Text="{Binding NewContact.PhoneNumber}">
+                   Text="{Binding SelectedContact.PhoneNumber}">
                 
             </Entry>
 
@@ -129,7 +129,7 @@
                    Placeholder="Email"
                    Margin="50,20,50,0"
                    HorizontalOptions="FillAndExpand"
-                   Text="{Binding NewContact.Email}">
+                   Text="{Binding SelectedContact.Email}">
             </Entry>
 
             <Image Grid.Row="9" Source="ic_triangle" HeightRequest="50" WidthRequest="50"  Margin="150,0,0,0" HorizontalOptions="Center"/>
@@ -151,5 +151,8 @@
                 
             </Label>
         </Grid>
+
+        </ScrollView>
+
     </ContentPage.Content>
 </ContentPage>
