@@ -15,6 +15,7 @@ namespace ContactsApp2.ViewModels
     {
         Contact _selectedContact;
         const string PhoneCallText = "Call";
+        const string OptionsTitleText = "Choose an option";
         public ICommand AddContactCommand { get; set; }
         public ICommand DeleteElementCommand { get; set; }
         public ICommand GoToAddContactPageCommand { get; set; }
@@ -63,9 +64,9 @@ namespace ContactsApp2.ViewModels
 
         public async void DisplayElementSelected()
         {
-            string answer = await App.Current.MainPage.DisplayActionSheet("Choose an option", "Cancel", "  " ,$"Call {SelectedContact.FirstName} {SelectedContact.LastName}");
+            string answer = await App.Current.MainPage.DisplayActionSheet($"{OptionsTitleText}", "Cancel", "  " ,$"Call {SelectedContact.FirstName} {SelectedContact.LastName}");
 
-           if (PhoneCallText == "Call")
+           if (answer == PhoneCallText)
            {
                 PlacePhoneCall(_selectedContact.PhoneNumber);              
            }
