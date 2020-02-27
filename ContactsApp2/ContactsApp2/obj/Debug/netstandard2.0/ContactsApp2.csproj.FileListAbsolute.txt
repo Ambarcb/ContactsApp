@@ -1,0 +1,15 @@
+C:\Users\Ambar Cuevas\Desktop\ContactsApp2\ContactsApp2\ContactsApp2\bin\Debug\netstandard2.0\ContactsApp2.deps.json
+C:\Users\Ambar Cuevas\Desktop\ContactsApp2\ContactsApp2\ContactsApp2\bin\Debug\netstandard2.0\ContactsApp2.dll
+C:\Users\Ambar Cuevas\Desktop\ContactsApp2\ContactsApp2\ContactsApp2\bin\Debug\netstandard2.0\ref\ContactsApp2.dll
+C:\Users\Ambar Cuevas\Desktop\ContactsApp2\ContactsApp2\ContactsApp2\bin\Debug\netstandard2.0\ContactsApp2.pdb
+C:\Users\Ambar Cuevas\Desktop\ContactsApp2\ContactsApp2\ContactsApp2\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Ambar Cuevas\Desktop\ContactsApp2\ContactsApp2\ContactsApp2\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\Ambar Cuevas\Desktop\ContactsApp2\ContactsApp2\ContactsApp2\obj\Debug\netstandard2.0\Views\AddNewContactPage.xaml.g.cs
+C:\Users\Ambar Cuevas\Desktop\ContactsApp2\ContactsApp2\ContactsApp2\obj\Debug\netstandard2.0\Views\ContactAgendaPage.xaml.g.cs
+C:\Users\Ambar Cuevas\Desktop\ContactsApp2\ContactsApp2\ContactsApp2\obj\Debug\netstandard2.0\ContactsApp2.AssemblyInfoInputs.cache
+C:\Users\Ambar Cuevas\Desktop\ContactsApp2\ContactsApp2\ContactsApp2\obj\Debug\netstandard2.0\ContactsApp2.AssemblyInfo.cs
+C:\Users\Ambar Cuevas\Desktop\ContactsApp2\ContactsApp2\ContactsApp2\obj\Debug\netstandard2.0\ContactsApp2.csproj.Fody.CopyLocal.cache
+C:\Users\Ambar Cuevas\Desktop\ContactsApp2\ContactsApp2\ContactsApp2\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Ambar Cuevas\Desktop\ContactsApp2\ContactsApp2\ContactsApp2\obj\Debug\netstandard2.0\ContactsApp2.dll
+C:\Users\Ambar Cuevas\Desktop\ContactsApp2\ContactsApp2\ContactsApp2\obj\Debug\netstandard2.0\ref\ContactsApp2.dll
+C:\Users\Ambar Cuevas\Desktop\ContactsApp2\ContactsApp2\ContactsApp2\obj\Debug\netstandard2.0\ContactsApp2.pdb

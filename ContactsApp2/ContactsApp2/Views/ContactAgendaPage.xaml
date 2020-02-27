@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             x:Name="ContactAgenda"
+             x:Class="ContactsApp2.Views.ContactAgendaPage">
+    <ContentPage.Content>
+       
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Frame Grid.Row="0"
+                       HasShadow="True"
+                       Margin="0,20,0,0"
+                       CornerRadius="30">
+                    <Label Text="Search contacts" FontSize="18" Margin="60,0,20,0"/>
+                </Frame>
+                <Image Source="ic_hamburgerbutton" Grid.Row="0" HeightRequest="100" WidthRequest="30" HorizontalOptions="StartAndExpand" Margin="25,23,0,0"/>
+                <Image Source="ic_dev" Grid.Row="0" HeightRequest="150" WidthRequest="40" HorizontalOptions="EndAndExpand" Margin="0,20,20,0"/>
+                <Image Source="ic_dots" Grid.Row="0"  HorizontalOptions ="EndAndExpand" Margin="10,20,50,0"/>
+            </Grid>
+           
+
+            <ListView ItemsSource="{Binding Contacts}"
+                     SelectionMode="Single"
+                     IsPullToRefreshEnabled="True"
+                     RefreshControlColor="Red"
+                     SelectedItem="{Binding SelectedContact,Mode=TwoWay}"
+                     Grid.Row="1">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Edit"
+                                          Command="{Binding Path = BindingContext.EditContactCommand,Source={x:Reference ContactAgenda}}"
+                                          CommandParameter="{Binding .}">
+
+                                </MenuItem>
+                                <MenuItem Text="Delete"
+                                          Command="{Binding Path = BindingContext.DeleteElementCommand,Source={x:Reference ContactAgenda}}"
+                                          CommandParameter="{Binding .}"
+                                          IsDestructive="True">
+                                </MenuItem>
+                            </ViewCell.ContextActions>
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{Binding Picture}" HeightRequest="100" WidthRequest="70" Margin="0,0,0,10"/>
+                                <Label Text="{Binding FirstName}" FontAttributes="Bold" FontSize="25" Margin="0,0,0,0"/>
+                                <Label Text="{Binding LastName}" FontAttributes="Bold" FontSize="25" Margin="0,0,0,0"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            <ImageButton Source="ic_plus" 
+                Grid.Row="1"
+                Padding="20"
+                HorizontalOptions="EndAndExpand" 
+                Command="{Binding GoToAddContactPageCommand}" 
+                BackgroundColor="Transparent"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

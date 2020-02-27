@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundColor="White"
+             x:Class="ContactsApp2.Views.AddNewContactPage">
+
+    <ContentPage.Content>
+        
+     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="5*" />
+            </Grid.ColumnDefinitions>
+
+            <Frame Grid.Row="0"
+                   Grid.ColumnSpan="2"
+             BackgroundColor ="LightBlue"/>
+
+            <ImageButton Source="ic_arrow" HorizontalOptions="StartAndExpand" BackgroundColor ="Transparent" Margin="5,0,0,0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ReturnToMainCommand}"/>
+                </Image.GestureRecognizers>
+            </ImageButton>
+            <Button Text ="Save" Grid.Row="0" Grid.ColumnSpan ="2" HorizontalOptions="End" BackgroundColor="Transparent" Command="{Binding AddContactCommand}"/>
+
+            <Frame Grid.Row="1"
+                   Grid.ColumnSpan="2"
+                   Margin="0,0,0,0"
+                   BackgroundColor ="LightGray">
+                <Label Text="Save to" FontSize="15" TextColor="Black"/>
+            </Frame>
+
+            <Button Grid.Row="1"
+                    Grid.ColumnSpan ="2"
+                    BackgroundColor="White"
+                    CornerRadius="50"
+                    Text="ambaraimeecb@gmail.com  "
+                    HorizontalOptions="Center"
+                    ImageSource="ic_dev"
+                    Margin="10,10,15,10"
+                    ContentLayout="Left,10">
+            </Button>
+
+            <ImageButton Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Source="ic_camera"
+                        HorizontalOptions="Center"
+                        BackgroundColor="White"
+                         WidthRequest="80" HeightRequest="100" Margin="10,10,0,0">
+                
+            </ImageButton>
+
+            <Image Grid.Row="3" Grid.Column ="0" Source ="ic_user" HorizontalOptions="StartAndExpand" Margin="15,0,15,0"/>
+            <Entry Grid.Row="3"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Placeholder="First name"
+                   Margin="50,0,50,0"
+                   HorizontalOptions="FillAndExpand" 
+                   Text="{Binding NewContact.FirstName}">
+                
+            </Entry>
+
+            <Entry Grid.Row="4" 
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Placeholder="Last name"
+                   Margin="50,30,50,0"
+                   HorizontalOptions="FillAndExpand" 
+                   Text="{Binding NewContact.LastName}">
+
+            </Entry>
+
+            <Image Grid.Row="5" Grid.Column="0" Source="ic_company" HorizontalOptions="StartAndExpand" Margin="15,25,0,0"/>
+            <Entry Grid.Row="5"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Placeholder="Company"
+                   Margin="50,30,50,0"
+                   HorizontalOptions="FillAndExpand" 
+                   Text="{Binding NewContact.Company}">
+
+            </Entry>
+
+            <Image Grid.Row="6" Grid.Column="0" Source="ic_phone" HorizontalOptions="StartAndExpand" Margin="15,20,0,0"/>
+            <Entry Grid.Row="6"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Placeholder="Phone"
+                   Margin="50,20,50,0"
+                   HorizontalOptions="FillAndExpand" 
+                   Text="{Binding NewContact.PhoneNumber}">
+                
+            </Entry>
+
+            <Image Grid.Row="7" Source="ic_triangle" HeightRequest="50" WidthRequest="50" Margin="150,0,0,0" HorizontalOptions="Center"/>
+            <Entry Grid.Row="7"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Placeholder="Mobile"
+                   Margin="50,0,220,0"
+                   HorizontalOptions="FillAndExpand">
+                
+            </Entry>
+
+            <Image Grid.Row="8" Grid.Column="0" Source="ic_email" HorizontalOptions="StartAndExpand" Margin="15,20,0,0"/>
+            <Entry Grid.Row="8"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Placeholder="Email"
+                   Margin="50,20,50,0"
+                   HorizontalOptions="FillAndExpand"
+                   Text="{Binding NewContact.Email}">
+            </Entry>
+
+            <Image Grid.Row="9" Source="ic_triangle" HeightRequest="50" WidthRequest="50"  Margin="150,0,0,0" HorizontalOptions="Center"/>
+            <Entry Grid.Row="9"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Placeholder="Home"
+                   Margin="50,0,220,0"
+                   HorizontalOptions="FillAndExpand">
+                
+            </Entry>
+
+            <Label Grid.Row="10"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Text="More fields"
+                   TextColor="Blue"
+                   Margin="55,0,0,0">
+                
+            </Label>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
